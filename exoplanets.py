@@ -10,7 +10,7 @@ def index():
 
 # Define Flask routes to display the data
 @app.route('/stars')
-def index():
+def stars():
     # Retrieve data from the stars table
     conn = sqlite3.connect('exoplanets.db')
     conn.row_factory = sqlite3.Row
@@ -23,18 +23,18 @@ def index():
     # Render the stars template with the data
     return render_template('stars.html', rows=rows)
 
-@app.route('/starsID/<ID>')
-def index():
-    # Retrieve data from the stars table
-    conn = sqlite3.connect('exoplanets.db')
-    conn.row_factory = sqlite3.Row
-    cur = conn.cursor()
+# @app.route('/stars/<ID>')
+# def stars(ID):
+#     # Retrieve data from the stars table
+#     conn = sqlite3.connect('exoplanets.db')
+#     conn.row_factory = sqlite3.Row
+#     cur = conn.cursor()
     
-    cur.execute("SELECT * FROM stars where ID=?",([ID]))
-    rows = cur.fetchall()
-    conn.close()
- # Render the stars template with the data
-    return render_template('stars.html', rows=rows)
+#     cur.execute("SELECT * FROM stars where ID=?",([ID]))
+#     rows = cur.fetchall()
+#     conn.close()
+#  # Render the stars template with the data
+#     return render_template('stars.html', rows=rows)
 
 
 @app.route('/planets')
@@ -50,19 +50,19 @@ def planets():
     # Render the planets template with the data
     return render_template('planets.html', rows=rows)
 
-from flask import Flask, jsonify
+# from flask import Flask, jsonify
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-# Application routes go here
+# # Application routes go here
 
-@app.errorhandler(404)
-def not_found(error):
-    return jsonify({'error': 'Not found'}), 404
+# @app.errorhandler(404)
+# def not_found(error):
+#     return jsonify({'error': 'Not found'}), 404
 
-@app.errorhandler(500)
-def internal_server_error(error):
-    return jsonify({'error': 'Internal server error'}), 500
+# @app.errorhandler(500)
+# def internal_server_error(error):
+#     return jsonify({'error': 'Internal server error'}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)

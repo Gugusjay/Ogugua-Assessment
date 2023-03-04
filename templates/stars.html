@@ -17,14 +17,14 @@
         </tr>
       </thead>
       <tbody>
-        {% for star in stars %}
+        {% for row in rows %}
         <tr>
-          <td>{{row{"name"}}}</td>
-          <td>{{row{"distance"}}}</td>
-          <td>{{row{"stellar_magnitude"}}}</td>
-          <td>{{row{"discovery_year"}}}</td>
-          <td>{{row{"mass_multiplier"}}}</td>
-          <td>{{row{"radius_multiplier"}}}</td>
+         <td>{{row["name"]}}</td>
+          <td>{{row["distance"]}}</td>
+          <td>{{row["stellar_magnitude"]}}</td>
+          <td>{{row["discovery_year"]}}</td>
+          <td>{{row["mass_multiplier"]}}</td>
+          <td>{{row["radius_multiplier"]}}</td>
         </tr>
         {% endfor %}
       </tbody>

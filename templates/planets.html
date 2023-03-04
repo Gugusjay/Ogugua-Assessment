@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Planets</title>
+  </head>
+  <body>
+    <h1>Planets</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>planet_type</th>
+          <th>mass_wrt</th>
+          <th>orbital_period</th>
+          <th>orbital_radius</th>
+          <th>eccentricity</th>
+          <th>detection_method</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{row{"planet_type"}}}</td>
+          <td>{{row{"mass_wrt"}}}</td>
+          <td>{{row{"orbital_period"}}}</td>
+          <td>{{row{"orbital_radius"}}}</td>
+          <td>{{row{"eccentricity"}}}</td>
+          <td>{{row{"detection_method"}}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
+
